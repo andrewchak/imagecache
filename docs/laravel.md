@@ -10,6 +10,10 @@ Add a dependency with this command : `composer require onigoetz/imagecache:dev-m
 
 Add `Onigoetz\Imagecache\Support\Laravel\ImagecacheServiceProvider` in `app/config/app.php` in the `'providers'` array
 
+### Facade
+
+Add `Onigoetz\Imagecache\Support\Laravel\Facades\ImageCache` in `app/config/app.php` in the `'aliases'` array
+
 ### Publish configuration
 
 Publish the configuration to be able to add your own presets

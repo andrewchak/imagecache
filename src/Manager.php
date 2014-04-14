@@ -52,9 +52,9 @@ class Manager
     {
         if (empty($presets)) $presets = $this->options['presets'];
         foreach($presets as $preset) {
-            $filepath = public_path() . "/" . $this->url($preset, $file);
-            if (File::isFile($filepath)) {
-                File::deleteFile($filepath);
+            $filepath = "{$this->options['path_images_root']}/" . $this->url($preset, $file);
+            if (file_exists($filepath)) {
+                @unlink($filepath);
             }
         }
     }
