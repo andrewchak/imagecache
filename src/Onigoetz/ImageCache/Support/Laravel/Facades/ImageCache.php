@@ -1,6 +1,6 @@
-<?php namespace Onigoetz\ImageCache\Support\Laravel\Facades;
+<?php namespace Onigoetz\Imagecache\Support\Laravel\Facades;
 
-class ImageCache extends Facade {
+class Imagecache extends Facade {
 
 	/**
 	 * Get the registered name of the component.
