@@ -43,6 +43,22 @@ class Manager
         return "{$this->options['path_images']}/$file";
     }
 
+    public function getPresets()
+    {
+        return $this->options['presets'];
+    }
+
+    public function clearImageCache($file, $presets = array())
+    {
+        if (empty($presets)) $presets = $this->options['presets'];
+        foreach($presets as $preset) {
+            $filepath = public_path() . "/" . $this->url($preset, $file);
+            if (File::isFile($filepath)) {
+                File::deleteFile($filepath);
+            }
+        }
+    }
+
     protected function getPresetActions($preset_key, $file)
     {
         //Is it a valid preset
