@@ -50,7 +50,7 @@ class Manager
 
     public function clearImageCache($file, $presets = array())
     {
-        if (empty($presets)) $presets = $this->options['presets'];
+        if (empty($presets)) $presets = array_keys($this->options['presets']);
         foreach($presets as $preset) {
             $filepath = "{$this->options['path_images_root']}/" . $this->url($preset, $file);
             if (file_exists($filepath)) {

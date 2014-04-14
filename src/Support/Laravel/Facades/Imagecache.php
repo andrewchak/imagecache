@@ -1,5 +1,7 @@
 <?php namespace Onigoetz\Imagecache\Support\Laravel\Facades;
 
+use Illuminate\Support\Facades\Facade;
+
 class Imagecache extends Facade {
 
 	/**
