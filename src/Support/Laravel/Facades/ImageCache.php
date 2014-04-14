@@ -1,4 +1,4 @@
-<?php namespace Onigoetz\ImageCache\Support\Facades;
+<?php namespace Onigoetz\ImageCache\Support\Laravel\Facades;
 
 class ImageCache extends Facade {
 
