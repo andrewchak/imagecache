@@ -43,6 +43,28 @@ class Manager
         return "{$this->options['path_images']}/$file";
     }
 
+    public function filePathFromUrl($url)
+    {
+        // Make sure the URL begins with the images path, otherwise just return original URL as path
+        if (strstr($url, $this->options['path_images']) === FALSE) return $url;
+
+        // Remove images folder
+        $base = "{$this->options['path_images']}/";
+        $file = substr($url, strlen($base));
+        
+        // We will automatically detect whether it is a cached version or the original path
+        $cache = "{$this->options['path_cache']}/";
+        if (strstr($file, $cache) === FALSE) {
+            return $file;
+        }
+
+        // Remove cache folder
+        $file = substr($file, strlen($cache));
+        
+        // Remove the first folder as that is the preset name
+        return substr($file, strpos($file, '/') + 1);
+    }
+
     public function getPresets()
     {
         return $this->options['presets'];
